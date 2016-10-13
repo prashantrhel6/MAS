@@ -1,0 +1,8 @@
+agent main {
+	module System S;
+	rule +!main(list args) {
+		S.createAgent("launcher","booklaunch");
+		S.createAgent("customer","customer");
+		
+	}
+}

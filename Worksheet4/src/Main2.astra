@@ -1,0 +1,10 @@
+agent Main2 {
+	module Messaging M;
+	module System S;
+	rule +!main(list args) {
+		M.installService("rmi","astra.messaging.rmi.RMIService");
+		M.startService("rmi");
+		
+		S.createAgent("customer","customer");
+	}
+}

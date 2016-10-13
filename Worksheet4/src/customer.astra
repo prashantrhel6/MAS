@@ -1,0 +1,7 @@
+agent customer extends book_service{
+	initial !init();
+
+	rule +!init() {
+		send(subscribe, "launcher", new_books());
+	}
+}

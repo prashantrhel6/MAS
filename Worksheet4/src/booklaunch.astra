@@ -1,0 +1,22 @@
+agent booklaunch extends book_service{
+	module System S;
+	module Console C;
+	
+	types launch{
+		formula clock(int);
+	}
+	initial clock(0);
+
+	rule +clock(int X) {
+		S.sleep(1000);
+		-clock(X);
+		
+		+clock(X+1);
+		
+		!!tick();
+	}
+	
+	rule +!tick(): clock(int X){
+		C.println("Ticking the Clock !!! " + X);
+	}
+}

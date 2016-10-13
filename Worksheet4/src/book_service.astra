@@ -1,0 +1,10 @@
+agent book_service {
+	
+	types book_service{
+			formula new_books();
+	}
+	
+	rule +!main(list args) {
+		// TODO: Write code here
+	}
+}
